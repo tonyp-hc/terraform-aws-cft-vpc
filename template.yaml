@@ -63,7 +63,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Ref EnvName
+          Value: !Ref Name
 
   # Same settings as default but we make our own so deleting stacks works
   # https://forums.aws.amazon.com/message.jspa?messageID=409995
@@ -120,7 +120,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Join ['', [ !Ref EnvName, ' Public ',  !Ref 'AWS::Region', !Ref AvailabilityZone1 ]]
+          Value: !Join ['', [ !Ref Name, ' Public ',  !Ref 'AWS::Region', !Ref AvailabilityZone1 ]]
 
   PublicRouteAssociation1:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
@@ -159,7 +159,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Join ['', [ !Ref EnvName, ' Public ',  !Ref 'AWS::Region', !Ref AvailabilityZone3 ]]
+          Value: !Join ['', [ !Ref Name, ' Public ',  !Ref 'AWS::Region', !Ref AvailabilityZone3 ]]
 
   PublicRouteAssociation3:
     Condition: 'AvailabilityZone3Exists'
@@ -209,7 +209,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Join ['', [ !Ref EnvName, ' Private ',  !Ref 'AWS::Region', !Ref AvailabilityZone1 ]]
+          Value: !Join ['', [ !Ref Name, ' Private ',  !Ref 'AWS::Region', !Ref AvailabilityZone1 ]]
 
   PrivateRouteAssociation1:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
@@ -227,7 +227,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Join ['', [ !Ref EnvName, ' Private ',  !Ref 'AWS::Region', !Ref AvailabilityZone2 ]]
+          Value: !Join ['', [ !Ref Name, ' Private ',  !Ref 'AWS::Region', !Ref AvailabilityZone2 ]]
 
   PrivateRouteAssociation2:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
@@ -246,7 +246,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Join ['', [ !Ref EnvName, ' Private ',  !Ref 'AWS::Region', !Ref AvailabilityZone3 ]]
+          Value: !Join ['', [ !Ref Name, ' Private ',  !Ref 'AWS::Region', !Ref AvailabilityZone3 ]]
 
   PrivateRouteAssociation3:
     Condition: 'AvailabilityZone3Exists'
@@ -265,7 +265,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Join ['', [ !Ref EnvName, ' Spare ',  !Ref 'AWS::Region', !Ref AvailabilityZone1 ]]
+          Value: !Join ['', [ !Ref Name, ' Spare ',  !Ref 'AWS::Region', !Ref AvailabilityZone1 ]]
 
   SpareRouteAssociation1:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
@@ -283,7 +283,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Join ['', [ !Ref EnvName, ' Spare ',  !Ref 'AWS::Region', !Ref AvailabilityZone2 ]]
+          Value: !Join ['', [ !Ref Name, ' Spare ',  !Ref 'AWS::Region', !Ref AvailabilityZone2 ]]
 
   SpareRouteAssociation2:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
@@ -302,7 +302,7 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: !Join ['', [ !Ref EnvName, ' Spare ',  !Ref 'AWS::Region', !Ref AvailabilityZone3 ]]
+          Value: !Join ['', [ !Ref Name, ' Spare ',  !Ref 'AWS::Region', !Ref AvailabilityZone3 ]]
 
   SpareRouteAssociation3:
     Condition: 'AvailabilityZone3Exists'
