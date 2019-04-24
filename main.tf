@@ -11,6 +11,7 @@ resource "aws_cloudformation_stack" "vpc" {
     AvailabilityZone3 = "${var.az3}"
     EnableNat = "${var.enable_nat}"
     EnvName = "${var.env}"
+    Name = "${var.name}"
   }
   template_body = "${data.template_file.vpc_template.rendered}"
   on_failure = "DELETE"
