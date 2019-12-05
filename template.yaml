@@ -25,6 +25,9 @@ Parameters:
   EnvName:
     Type: String
 
+  Name:
+    Type: String
+
 Conditions:
   IsActive:
     !Equals [true, !Ref Active]
